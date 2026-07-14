@@ -1,0 +1,299 @@
+.form-panel {
+  background: var(--canvas);
+  overflow-y: auto;
+  border-right: 1px solid var(--line);
+}
+
+.form-panel-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 36px 64px;
+}
+
+.form-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+}
+
+.form-section-heading h2 {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--ink);
+}
+
+.lock-pill {
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  padding: 6px 10px;
+  border-radius: 999px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.field {
+  margin-bottom: 16px;
+}
+
+.field-label-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.field-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  letter-spacing: 0.01em;
+}
+
+.field-ai-tag {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--brand-ink);
+  background: var(--ai-accent-soft);
+  border: 1px solid var(--ai-accent);
+  padding: 1px 7px;
+  border-radius: 999px;
+  animation: tagFade 2.6s ease forwards;
+}
+
+.field-box {
+  min-height: 42px;
+  background: var(--panel);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  cursor: not-allowed;
+}
+
+.field-box--pulse {
+  animation: fieldPulse 2.2s ease;
+}
+
+/* Editable fields override the read-only look/cursor above --
+   Correction: form now supports direct edits, not just chat. */
+.field-box--editable {
+  cursor: default;
+  align-items: stretch;
+  min-height: unset;
+}
+
+.field-empty {
+  font-size: 13.5px;
+  color: var(--ink-faint);
+}
+
+.field-value {
+  font-size: 14px;
+  color: var(--ink);
+}
+
+.field-value--strong {
+  font-weight: 600;
+}
+
+.field-value--para {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.field-input {
+  width: 100%;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--ink);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 9px 12px;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.field-input:focus {
+  border-color: var(--brand);
+  box-shadow: 0 0 0 3px var(--brand-soft);
+}
+
+.field-input::placeholder {
+  color: var(--ink-faint);
+}
+
+.field-input--textarea {
+  min-height: 72px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+select.field-input {
+  cursor: pointer;
+  appearance: auto;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  font-size: 12.5px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.tag--brand {
+  background: var(--brand-soft);
+  color: var(--brand-ink);
+}
+
+.tag--neutral {
+  background: var(--neutral-soft);
+  color: #93450a;
+}
+
+.tag-remove {
+  border: none;
+  background: transparent;
+  color: inherit;
+  font-size: 15px;
+  line-height: 1;
+  margin-left: 4px;
+  cursor: pointer;
+  opacity: 0.6;
+  padding: 0;
+}
+
+.tag-remove:hover {
+  opacity: 1;
+}
+
+.tag-adder {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.tag-adder input {
+  flex: 1;
+  font-family: inherit;
+  font-size: 13.5px;
+  color: var(--ink);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 7px 10px;
+  outline: none;
+}
+
+.tag-adder input:focus {
+  border-color: var(--brand);
+}
+
+.tag-adder button {
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--brand);
+  background: var(--brand-soft);
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 7px 14px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.tag-adder button:hover {
+  filter: brightness(0.97);
+}
+
+.sentiment-pill {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 999px;
+}
+
+.sentiment-radio-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.sentiment-radio {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.sentiment-radio input[type="radio"] {
+  accent-color: var(--brand);
+  cursor: pointer;
+}
+
+.sentiment-radio .sentiment-pill {
+  border: 1px solid var(--line);
+}
+
+.suggestion-list {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 13.5px;
+  color: var(--ink);
+  line-height: 1.7;
+}
+
+@keyframes fieldPulse {
+  0% {
+    border-color: var(--ai-accent);
+    box-shadow: 0 0 0 3px var(--ai-accent-soft);
+    background: var(--ai-accent-soft);
+  }
+  100% {
+    border-color: var(--line-strong);
+    box-shadow: 0 0 0 0 rgba(94, 234, 212, 0);
+    background: var(--panel);
+  }
+}
+
+@keyframes tagFade {
+  0% {
+    opacity: 0;
+    transform: translateY(-2px);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}

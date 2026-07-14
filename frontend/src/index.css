@@ -1,0 +1,70 @@
+:root {
+  /* Color tokens -- clinical white workspace on the left, dark AI co-pilot
+     console on the right. The contrast between the two zones is the point:
+     one is verified structured data, the other is where judgement happens. */
+  --canvas: #eef1f6;
+  --panel: #ffffff;
+  --ink: #101828;
+  --ink-soft: #667085;
+  --ink-faint: #98a2b3;
+  --line: #e4e7ec;
+  --line-strong: #d0d5dd;
+
+  --brand: #2450e0;
+  --brand-soft: #eaf0ff;
+  --brand-ink: #16327a;
+
+  --ai-bg: #0b1220;
+  --ai-bg-raised: #121b2e;
+  --ai-line: #223049;
+  --ai-text: #e7ecf7;
+  --ai-text-soft: #93a2c2;
+  --ai-accent: #5eead4;
+  --ai-accent-soft: rgba(94, 234, 212, 0.14);
+
+  --positive: #12b76a;
+  --positive-soft: #e7f8ef;
+  --neutral: #f79009;
+  --neutral-soft: #fef3e6;
+  --negative: #f04438;
+  --negative-soft: #feecec;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+
+  --shadow-panel: 0 1px 2px rgba(16, 24, 40, 0.04), 0 8px 24px rgba(16, 24, 40, 0.06);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: inherit;
+}
+
+::selection {
+  background: var(--ai-accent-soft);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
