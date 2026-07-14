@@ -209,4 +209,4 @@ The app will be live at `http://localhost:5173`.
 
 ## Video Walkthrough
 
-[Link to submission video]
+[https://www.loom.com/share/85da44f98ae44d3182653cfff8ccb2cf]
